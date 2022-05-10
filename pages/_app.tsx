@@ -40,13 +40,7 @@ import * as gtag from '../lib/gtag'
 import Script from 'next/script'
 
 import { bootstrap } from 'lib/bootstrap-client'
-import {
-  isServer,
-  fathomId,
-  fathomConfig,
-  posthogId,
-  posthogConfig
-} from 'lib/config'
+import { isServer } from 'lib/config'
 
 if (!isServer) {
   bootstrap()

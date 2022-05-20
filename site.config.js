@@ -9,11 +9,11 @@ module.exports = {
 
   // basic site info (required)
   name: 'lix notion blog',
-  domain: 'lixyz.me',
+  domain: 'blog.lixyz.me',
   author: 'lix',
 
   // open graph metadata (optional)
-  description: 'Example site description',
+  description: 'Blog posts powered by Notion from lix',
   //  socialImageTitle: 'Transitive Bullshit',
   socialImageSubtitle: 'Hello World! 👋',
 

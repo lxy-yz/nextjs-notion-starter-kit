@@ -52,6 +52,7 @@
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   grid-gap: 6vmin;
   gap: 6vmin;
+  border: none;
 }
 
 .notion-gallery-grid .notion-page-icon-inline {
@@ -73,7 +74,6 @@
 }
 
 .notion-collection-card {
-  border-radius: 16px;
   box-shadow: none;
 }
 
@@ -169,6 +169,10 @@
   }
 }
 
+.notion-collection-page-properties {
+  display: none;
+}
+
 .notion-collection {
   width: 100%;
 }
@@ -186,6 +190,12 @@
   border-bottom: none;
   margin-top: 1rem;
 }
+@media screen and (max-width: 600px) {
+  .notion .notion-table-row {
+    margin-top: 0;
+  }
+}
+
 .notion .notion-table-view-header-cell-inner {
   border: none;
 }

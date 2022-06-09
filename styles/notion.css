@@ -158,15 +158,7 @@
 }
 
 .notion-title {
-  display: block;
-  text-align: center;
-  font-size: 1.8rem;
-}
-
-@media screen and (min-width: 720px) {
-  .notion-title {
-    font-size: 2.5rem;
-  }
+  display: none;
 }
 
 .notion-collection-page-properties {

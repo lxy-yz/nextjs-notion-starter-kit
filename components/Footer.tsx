@@ -33,20 +33,22 @@ export const FooterImpl: React.FC = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.copyright}>Copyright {new Date().getFullYear()} {config.author}</div>
 
-      <div className={styles.settings}>
-        {hasMounted && (
-          <a
-            className={styles.toggleDarkMode}
-            href='#'
-            role='button'
-            onClick={onToggleDarkMode}
-            title='Toggle dark mode'
-          >
-            {isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
-          </a>
-        )}
+      <div className={styles.center}>
+        {/* <div className={styles.copyright}>Copyright {new Date().getFullYear()} {config.author}</div> */}
+        <div className={styles.settings}>
+          {hasMounted && (
+            <a
+              className={styles.toggleDarkMode}
+              href='#'
+              role='button'
+              onClick={onToggleDarkMode}
+              title='Toggle dark mode'
+            >
+              {isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
+            </a>
+          )}
+        </div>
       </div>
 
       <div className={styles.social}>

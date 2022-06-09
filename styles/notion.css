@@ -169,8 +169,17 @@
   }
 }
 
+.notion-collection {
+  width: 100%;
+}
 .notion-table {
-  width: auto !important;
+  width: 100% !important;
+}
+.notion-collection-header {
+  padding: 0 !important;
+}
+.notion-table-view {
+  padding: 0 !important;
 }
 
 .notion-collection-row {
@@ -210,6 +219,12 @@
   .notion-page-cover-wrapper span,
   .notion-page-cover-wrapper img {
     border-radius: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .notion-page-content {
+    margin-top: 2rem;
   }
 }
 

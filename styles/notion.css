@@ -182,6 +182,25 @@
   padding: 0 !important;
 }
 
+.notion .notion-table-row {
+  border-bottom: none;
+  margin-top: 1rem;
+}
+.notion .notion-table-view-header-cell-inner {
+  border: none;
+}
+.notion .notion-table-th:first-child,
+.notion .notion-table-cell:first-child {
+  flex: 1;
+}
+.notion .notion-table-th,
+.notion .notion-table-cell {
+  flex-basis: 160px !important;
+}
+.notion .notion-table-cell {
+  border: none;
+}
+
 .notion-collection-row {
   border: 0;
   padding-bottom: 1em;

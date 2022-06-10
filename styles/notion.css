@@ -188,6 +188,10 @@
   }
 }
 
+.notion .notion-table-header-inner {
+  border-top: none;
+  text-transform: uppercase;
+}
 .notion .notion-table-view-header-cell-inner {
   border: none;
 }

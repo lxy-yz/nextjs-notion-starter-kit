@@ -43,6 +43,11 @@
   width: 640px;
 }
 
+.cusdis {
+  width: 512px;
+  margin: auto;
+}
+
 .footer {
   width: 100%;
   max-width: 1100px;

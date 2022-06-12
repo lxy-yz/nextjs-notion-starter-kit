@@ -247,20 +247,30 @@ export const NotionPage: React.FC<types.PageProps> = ({
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
 
-  const footer =
+  const footer = (
     <>
-      <ReactCusdis
-        attrs={{
-          host: 'https://cusdis-6su7cxsww-lxy-yz.vercel.app',
-          appId: 'acd02387-76b5-47fd-80d3-0334d41ea3d7',
-          pageId,
-          pageTitle: title,
-          pageUrl: typeof window !== 'undefined' && window.location.href
-        }}
-      />
+      {router.asPath !== '/' && (
+        <ReactCusdis
+          style={{
+            maxWidth: '512px',
+            width: '100%',
+            borderTop: '1px solid lightgray',
+            padding: '3rem 2rem',
+            margin: '6rem auto'
+          }}
+          attrs={{
+            host: process.env.NEXT_PUBLIC_CUSDIS_API,
+            appId: 'acd02387-76b5-47fd-80d3-0334d41ea3d7',
+            pageId,
+            pageTitle: title,
+            pageUrl: typeof window !== 'undefined' && window.location.href
+          }}
+        />
+      )}
 
       <Footer />
     </>
+  )
 
   return (
     <>

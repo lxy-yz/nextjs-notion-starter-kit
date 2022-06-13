@@ -10,6 +10,8 @@ import { PageBlock } from 'notion-types'
 
 import TweetEmbed from 'react-tweet-embed'
 
+import { ReactCusdis } from 'react-cusdis'
+
 // core notion renderer
 import { NotionRenderer } from 'react-notion-x'
 
@@ -205,8 +207,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
     [block, recordMap, isBlogPost]
   )
 
-  const footer = React.useMemo(() => <Footer />, [])
-
   if (router.isFallback) {
     return <Loading />
   }
@@ -238,14 +238,39 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
   const socialImage = mapImageUrl(
     getPageProperty<string>('Social Image', block, recordMap) ||
-      (block as PageBlock).format?.page_cover ||
-      config.defaultPageCover,
+    (block as PageBlock).format?.page_cover ||
+    config.defaultPageCover,
     block
   )
 
   const socialDescription =
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
+
+  const footer = (
+    <>
+      {router.asPath !== '/' && (
+        <ReactCusdis
+          style={{
+            maxWidth: '512px',
+            width: '100%',
+            borderTop: '1px solid lightgray',
+            padding: '3rem 2rem',
+            margin: '6rem auto'
+          }}
+          attrs={{
+            host: process.env.NEXT_PUBLIC_CUSDIS_API,
+            appId: 'acd02387-76b5-47fd-80d3-0334d41ea3d7',
+            pageId,
+            pageTitle: title,
+            pageUrl: typeof window !== 'undefined' && window.location.href
+          }}
+        />
+      )}
+
+      <Footer />
+    </>
+  )
 
   return (
     <>

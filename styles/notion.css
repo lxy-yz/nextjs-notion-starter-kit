@@ -158,11 +158,15 @@
 }
 
 .notion-title {
+  display: block;
+  text-align: center;
+}
+.index-page .notion-title {
   display: none;
 }
 
 .notion-collection-page-properties {
-  display: none;
+  display: block;
 }
 
 .notion-collection {

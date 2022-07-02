@@ -44,10 +44,11 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     if (!block) continue
 
     const parentPage = getBlockParentPage(block, recordMap)
+    const postsPageId = '478547f06c27418c8bc903e7b8de7b12'
     const isBlogPost =
       block.type === 'page' &&
       block.parent_table === 'collection' &&
-      parentPage?.id === idToUuid(config.rootNotionPageId)
+      parentPage?.id === idToUuid(postsPageId)
     if (!isBlogPost) {
       continue
     }
@@ -66,8 +67,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     const date = lastUpdatedTime
       ? new Date(lastUpdatedTime)
       : publishedTime
-      ? new Date(publishedTime)
-      : undefined
+        ? new Date(publishedTime)
+        : undefined
     const socialImageUrl = getSocialImageUrl(pageId)
 
     feed.item({
@@ -77,9 +78,9 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
       description,
       enclosure: socialImageUrl
         ? {
-            url: socialImageUrl,
-            type: 'image/jpeg'
-          }
+          url: socialImageUrl,
+          type: 'image/jpeg'
+        }
         : undefined
     })
   }

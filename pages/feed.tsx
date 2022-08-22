@@ -73,7 +73,13 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
         : undefined
     const socialImageUrl = getSocialImageUrl(pageId)
 
-    const { html: content } = await NotionPageToHtml.convert(url, { bodyContentOnly: true });
+    let content;
+    try {
+      const { html } = await NotionPageToHtml.convert(`https://notion.so/${pageId.replaceAll('-', '')}`, { bodyContentOnly: true });
+      content = html;
+    } catch (err) {
+      console.error('NotionPageToHtml.convert error', err.message)
+    }
 
     feed.item({
       title,

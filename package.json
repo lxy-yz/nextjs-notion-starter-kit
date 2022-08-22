@@ -40,6 +40,7 @@
     "next-api-og-image": "^2.2.1",
     "node-fetch": "^2.6.1",
     "notion-client": "^6.12.6",
+    "notion-page-to-html": "^1.2.0",
     "notion-types": "^6.12.6",
     "notion-utils": "^6.12.6",
     "p-map": "^5.3.0",

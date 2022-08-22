@@ -13,6 +13,8 @@ import { getSiteMap } from 'lib/get-site-map'
 import { getCanonicalPageUrl } from 'lib/map-page-url'
 import { getSocialImageUrl } from 'lib/get-social-image-url'
 
+import NotionPageToHtml from 'notion-page-to-html';
+
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   if (req.method !== 'GET') {
     res.statusCode = 405
@@ -71,6 +73,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
         : undefined
     const socialImageUrl = getSocialImageUrl(pageId)
 
+    const { html: content } = await NotionPageToHtml.convert(url, { bodyContentOnly: true });
+
     feed.item({
       title,
       url,
@@ -81,7 +85,16 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
           url: socialImageUrl,
           type: 'image/jpeg'
         }
-        : undefined
+        : undefined,
+
+      custom_elements: [
+        {
+          "content:encoded":
+          {
+            _cdata: content
+          }
+        }
+      ]
     })
   }
 

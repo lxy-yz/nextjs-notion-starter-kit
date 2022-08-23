@@ -96,8 +96,6 @@ export default withOGImage<'query', 'id'>({
           : undefined
       const detail = date || config.domain
 
-      console.log('image', image);
-
       return (
         <html>
           <head>

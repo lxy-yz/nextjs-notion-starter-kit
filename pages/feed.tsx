@@ -15,15 +15,15 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   }
 
   const siteMap = await getSiteMap()
-  const ttlMinutes = 24 * 60 // 24 hours
-  const ttlSeconds = ttlMinutes * 60
+  // const ttlMinutes = 24 * 60 // 24 hours
+  // const ttlSeconds = ttlMinutes * 60
 
   const feed = new RSS({
     title: config.name,
     site_url: config.host,
     feed_url: `${config.host}/feed.xml`,
     language: config.language,
-    ttl: ttlMinutes
+    // ttl: ttlMinutes
   });
 
 
@@ -32,7 +32,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 
   res.setHeader(
     'Cache-Control',
-    `public, max-age=${ttlSeconds}, stale-while-revalidate=${ttlSeconds}`
+    'public, max-age=0, must-revalidate'
+    // `public, max-age=${ttlSeconds}, stale-while-revalidate=${ttlSeconds}`
   )
   res.setHeader('Content-Type', 'text/xml; charset=utf-8')
   res.write(feedText)

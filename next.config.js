@@ -29,5 +29,8 @@ module.exports = withBundleAnalyzer({
     }
 
     return config
-  }
+  },
+
+  // https://github.com/vercel/next.js/issues/8251
+  experimental: { nftTracing: true, outputFileTracingRoot: __dirname }
 })

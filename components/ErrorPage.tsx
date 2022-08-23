@@ -1,9 +1,10 @@
 import * as React from 'react'
+import { NextPage } from 'next'
 import { PageHead } from './PageHead'
 
 import styles from './styles.module.css'
 
-export const ErrorPage: React.FC<{ statusCode: number }> = ({ statusCode }) => {
+export const ErrorPage: NextPage<{ statusCode: number }> = ({ statusCode }) => {
   const title = 'Error'
 
   return (
@@ -21,4 +22,12 @@ export const ErrorPage: React.FC<{ statusCode: number }> = ({ statusCode }) => {
       </div>
     </>
   )
+}
+
+ErrorPage.getInitialProps = ({ res, err }) => {
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 404
+
+  console.log('res', res, 'error', err);
+
+  return { statusCode }
 }

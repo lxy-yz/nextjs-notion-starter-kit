@@ -12,13 +12,13 @@ import type { SiteMap } from 'lib/types'
 
 import NotionPageToHtml from 'notion-page-to-html'
 import path from 'path'
-import fs from 'fs'
-
-const fileCache = path.join(process.cwd(), 'rss.data.json')
+import fs from 'fs/promises'
 
 export async function generateFeedItems(siteMap: SiteMap) {
+  const fileCache = path.join(process.cwd(), 'data', 'rss.json')
+
   const res = []
-  const cache = JSON.parse(fs.readFileSync(fileCache, 'utf-8'))
+  const cache = JSON.parse(await fs.readFile(fileCache, 'utf-8'))
 
   for (const pagePath of Object.keys(siteMap.canonicalPageMap)) {
     const pageId = siteMap.canonicalPageMap[pagePath]
@@ -102,7 +102,7 @@ export async function generateFeedItems(siteMap: SiteMap) {
   if (
     Object.keys(cache).length !== Object.keys(siteMap.canonicalPageMap).length
   ) {
-    fs.writeFileSync(fileCache, JSON.stringify(cache))
+    await fs.writeFile(fileCache, JSON.stringify(cache))
   }
   return res
 }

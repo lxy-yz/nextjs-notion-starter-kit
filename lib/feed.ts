@@ -14,12 +14,12 @@ import NotionPageToHtml from 'notion-page-to-html'
 import path from 'path'
 import fs from 'fs'
 
-export async function generateFeedItems(siteMap: SiteMap) {
+export async function generateFeedItems(siteMap: SiteMap, skipCache = false) {
   const dataDir = path.join(process.cwd(), 'data')
   const fileCache = `${dataDir}/rss.json`
 
   const res = []
-  const cache = JSON.parse(fs.readFileSync(fileCache, 'utf-8'))
+  const cache = JSON.parse(fs.readFileSync(fileCache, 'utf8'))
 
   for (const pagePath of Object.keys(siteMap.canonicalPageMap)) {
     const pageId = siteMap.canonicalPageMap[pagePath]
@@ -41,7 +41,7 @@ export async function generateFeedItems(siteMap: SiteMap) {
       continue
     }
 
-    if (cache[pageId]) {
+    if (cache[pageId] && !skipCache) {
       res.push(cache[pageId])
       continue
     }
@@ -67,12 +67,17 @@ export async function generateFeedItems(siteMap: SiteMap) {
     let content
     try {
       const { html } = await NotionPageToHtml.convert(
-        `https://notion.so/${pageId.replaceAll('-', '')}`,
+        `https://notion.so/${pageId.replace(/-/g, '')}`,
         { bodyContentOnly: true }
       )
       content = html
     } catch (err) {
-      console.error('NotionPageToHtml.convert error', err.message)
+      console.error(
+        'NotionPageToHtml.convert error',
+        err.message,
+        'pageId',
+        pageId
+      )
     }
 
     const item = {

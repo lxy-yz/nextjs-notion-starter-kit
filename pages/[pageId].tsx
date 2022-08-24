@@ -30,7 +30,7 @@ export async function getStaticPaths() {
   }
 
   const siteMap = await getSiteMap()
-  await generateFeedItems(siteMap)
+  await generateFeedItems(siteMap, true)
 
   const staticPaths = {
     paths: Object.keys(siteMap.canonicalPageMap).map((pageId) => ({

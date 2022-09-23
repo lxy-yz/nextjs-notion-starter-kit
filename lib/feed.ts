@@ -70,7 +70,9 @@ export async function generateFeedItems(siteMap: SiteMap, skipCache = false) {
         `https://notion.so/${pageId.replace(/-/g, '')}`,
         { bodyContentOnly: true }
       )
-      content = html
+      // FIX: work around for 4.5M lambda response payload limit
+      // https://vercel.com/docs/concepts/limits/overview#serverless-function-payload-size-limit
+      content = html.slice(0, 500)
     } catch (err) {
       console.error(
         'NotionPageToHtml.convert error',

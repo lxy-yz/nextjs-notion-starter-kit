@@ -18,7 +18,7 @@
 }
 
 .index-page {
-  --notion-max-width: 900px;
+  --notion-max-width: 800px;
 }
 
 .notion-text {
@@ -48,7 +48,8 @@
   gap: 0.5rem;
 }
 
-.notion-gallery-grid {
+
+/* .notion-gallery-grid {
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   grid-gap: 6vmin;
   gap: 6vmin;
@@ -71,17 +72,17 @@
 
 .notion-gallery-grid .notion-property-text {
   font-size: 14px;
-}
+} */
 
-.notion-collection-card {
+/* .notion-collection-card {
   box-shadow: none;
 }
 
 .notion-collection-card {
   overflow: visible;
-}
+} */
 
-.notion-collection-card-cover {
+/* .notion-collection-card-cover {
   border-radius: 4px;
   box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1);
 }
@@ -90,15 +91,15 @@
   border-bottom: 0 none;
   transition: filter 150ms linear;
   filter: none;
-}
+} */
 
-.notion-collection-card:hover .notion-collection-card-cover {
+/* .notion-collection-card:hover .notion-collection-card-cover {
   filter: brightness(120%);
 }
 
 .notion-collection-card-body {
   padding: 10px;
-}
+} */
 
 /* only target safari */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -238,9 +239,8 @@
   /* max-width: 1200px !important; */
   /* border-radius: 24px; */
 }
-
 .notion-page-cover-wrapper {
-  box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1);
+  /* box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1); */
 }
 
 @media only screen and (max-width: 1200px) {
@@ -395,14 +395,14 @@
 }
 
 /* if you don't want rounded page icon images, remove this */
-.notion-page-icon-hero.notion-page-icon-image {
+/* .notion-page-icon-hero.notion-page-icon-image {
   border-radius: 50%;
   box-shadow: 0 8px 40px 0 rgb(0 0 0 / 21%);
 }
 .notion-page-icon-hero.notion-page-icon-image span,
 .notion-page-icon-hero.notion-page-icon-image img {
   border-radius: 50%;
-}
+} */
 
 .notion-header {
   background: hsla(0, 0%, 100%, 0.8);

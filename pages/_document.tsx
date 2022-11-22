@@ -26,6 +26,8 @@ export default class MyDocument extends Document {
           </Head>
 
           <body>
+            <script defer data-domain="blog.liallen.me" src="https://analytics.liallen.me/js/plausible.js"></script>
+
             <script
               dangerouslySetInnerHTML={{
                 __html: `

@@ -31,8 +31,9 @@ export async function generateFeedItems(siteMap: SiteMap, skipCache = false) {
     if (!block) continue
 
     const parentPage = getBlockParentPage(block, recordMap)
-    // https://lxy-yz.notion.site/Posts-478547f06c27418c8bc903e7b8de7b12
-    const postsPageId = '478547f06c27418c8bc903e7b8de7b12'
+    // FIXME: update if posts page move/deleted
+    // https://lxy-yz.notion.site/Posts-3b0f396363d04035865044ce5e68e49e
+    const postsPageId = '3b0f396363d04035865044ce5e68e49e'
     const isBlogPost =
       block.type === 'page' &&
       block.parent_table === 'collection' &&

@@ -9,12 +9,12 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: "lix's blog",
-  domain: 'blog.lixyz.me',
-  author: 'lix',
+  name: "Allen's blog",
+  domain: 'blog.liallen.me',
+  author: 'Allen',
 
   // open graph metadata (optional)
-  description: 'Posts & random thoughts from lix',
+  description: 'Thoughts from Allen',
 
   // social usernames (optional)
   // twitter: 'transitive_bs',

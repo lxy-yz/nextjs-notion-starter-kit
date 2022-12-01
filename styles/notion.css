@@ -48,6 +48,9 @@
   gap: 0.5rem;
 }
 
+.notion-page-content-inner .notion-list-numbered {
+  width: 100%;
+}
 
 /* .notion-gallery-grid {
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));

@@ -71,6 +71,7 @@ export default class MyDocument extends Document {
             <NextScript />
 
             <script defer data-domain="blog.liallen.me" src="https://analytics.liallen.me/js/plausible.js"></script>
+            <script defer data-domain="blog.liallen.me" src="https://plausible.liallen.me/js/script.js"></script>
           </body>
         </Html>
       </IconContext.Provider>

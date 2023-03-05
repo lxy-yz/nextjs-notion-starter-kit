@@ -13,6 +13,26 @@ import type { SiteMap } from 'lib/types'
 import NotionPageToHtml from 'notion-page-to-html'
 import path from 'path'
 import fs from 'fs'
+import RSS from 'rss'
+import { getSiteMap } from './get-site-map'
+
+main().catch(console.error)
+
+async function main() {
+  const feed = new RSS({
+    title: config.name,
+    site_url: config.host,
+    feed_url: `${config.host}/feed.xml`,
+    language: config.language
+    // ttl: ttlMinutes
+  })
+
+  const siteMap = await getSiteMap()
+  ;(await generateFeedItems(siteMap)).forEach((item) => feed.item(item))
+
+  const xml = feed.xml({ indent: true })
+  fs.writeFileSync('public/feed.xml', xml)
+}
 
 export async function generateFeedItems(siteMap: SiteMap, skipCache = false) {
   const dataDir = path.join(process.cwd(), 'data')

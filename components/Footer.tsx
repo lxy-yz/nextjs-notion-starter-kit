@@ -8,6 +8,10 @@ import { FaYoutube } from '@react-icons/all-files/fa/FaYoutube'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
 import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
 
+import Image from 'next/image'
+import writtenByHumanDark from '../public/written-by-human-not-by-ai-badge-black.svg'
+import writtenByHumanLight from '../public/written-by-human-not-by-ai-badge-white.svg'
+
 import { useDarkMode } from 'lib/use-dark-mode'
 import * as config from 'lib/config'
 
@@ -33,7 +37,6 @@ export const FooterImpl: React.FC = () => {
 
   return (
     <footer className={styles.footer}>
-
       <div className={styles.center}>
         {/* <div className={styles.copyright}>Copyright {new Date().getFullYear()} {config.author}</div> */}
         <div className={styles.settings}>
@@ -49,6 +52,12 @@ export const FooterImpl: React.FC = () => {
             </a>
           )}
         </div>
+        <div className={styles.badge}>
+          <Image
+            alt='Written By Human Not AI'
+            src={isDarkMode ? writtenByHumanLight : writtenByHumanDark}
+          />
+        </div>{' '}
       </div>
 
       <div className={styles.social}>

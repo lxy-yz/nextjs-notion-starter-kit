@@ -1998,7 +1998,7 @@ lowercase-keys@^3.0.0:
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-3.0.0.tgz#c5e7d442e37ead247ae9db117a9d0a467c89d4f2"
   integrity sha512-ozCC6gdQ+glXOQsveKD0YsDy8DSQFjDTz4zyzEHNV5+JP5D62LmfDZ6o1cycFx9ouG940M5dE8C8CTewdj2YWQ==
 
-lqip-modern@2.0.0:
+lqip-modern@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/lqip-modern/-/lqip-modern-2.0.0.tgz#0e77156b13d65b676144a7c09cd0f23b940b76be"
   integrity sha512-xpteQPa2PNvEOUMY9vPLtA22LVwvwLTJQCJQ1efHFObEfSby8IgHeNrgaNeVFGSL0yOTMB+EK4yZnEjg2Ipfnw==

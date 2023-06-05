@@ -132,6 +132,10 @@
   margin: 0.75em 0;
 }
 
+.notion-callout .notion-toggle {
+  display: none;
+}
+
 .notion-hr {
   margin: 2em 0;
 }

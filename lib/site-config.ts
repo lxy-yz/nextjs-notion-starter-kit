@@ -1,6 +1,7 @@
 import * as types from './types'
 
 export interface SiteConfig {
+  postsNotionPageId: string
   rootNotionPageId: string
   rootNotionSpaceId?: string
 

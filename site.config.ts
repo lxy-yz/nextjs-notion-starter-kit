@@ -4,6 +4,10 @@ export default siteConfig({
   // the site's root Notion page (required)
   rootNotionPageId: '995f712ada64429b8b3568d6aefea622',
 
+  // FIXME: update if posts page move/deleted
+  // https://www.notion.so/lxy-yz/Posts-ca900bca7a6440db91a2b131fd54ce2e
+  postsNotionPageId: 'ca900bca7a6440db91a2b131fd54ce2e',
+
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,

@@ -15,6 +15,7 @@ import path from 'path'
 import fs from 'fs'
 import RSS from 'rss'
 import { getSiteMap } from './get-site-map'
+import { getSiteConfig } from './get-config-value'
 
 main().catch(console.error)
 
@@ -51,9 +52,8 @@ export async function generateFeedItems(siteMap: SiteMap, skipCache = false) {
     if (!block) continue
 
     const parentPage = getBlockParentPage(block, recordMap)
-    // FIXME: update if posts page move/deleted
-    // https://lxy-yz.notion.site/Posts-3b0f396363d04035865044ce5e68e49e
-    const postsPageId = '3b0f396363d04035865044ce5e68e49e'
+
+    const postsPageId = getSiteConfig('postsNotionPageId', '')
     const isBlogPost =
       block.type === 'page' &&
       block.parent_table === 'collection' &&

@@ -23,7 +23,7 @@
     "test": "run-p test:*",
     "test:lint": "eslint '**/*.{ts,tsx}'",
     "test:prettier": "prettier '**/*.{js,jsx,ts,tsx}' --check",
-    "feed": "npx tsx lib/feed.ts"
+    "feed": "NODE_ENV=production npx tsx lib/feed.ts"
   },
   "dependencies": {
     "@fisch0920/use-dark-mode": "^2.4.0",

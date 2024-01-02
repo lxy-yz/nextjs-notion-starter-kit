@@ -132,7 +132,7 @@ export async function generateFeedItems(siteMap: SiteMap, skipCache = false) {
     Object.keys(cache).length !== Object.keys(siteMap.canonicalPageMap).length
   ) {
     try {
-      fs.writeFileSync(fileCache, JSON.stringify(cache))
+      fs.writeFileSync(fileCache, JSON.stringify(cache, null, 2))
       // eslint-disable-next-line no-empty
     } catch {}
   }

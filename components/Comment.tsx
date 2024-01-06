@@ -21,6 +21,7 @@ import Giscus from '@giscus/react';
 export const Comments = () => {
     return (
         <Giscus
+            theme="preferred_color_scheme"
             repo="lxy-yz/nextjs-notion-starter-kit"
             repoId="R_kgDOGnZE4w"
             category="General"

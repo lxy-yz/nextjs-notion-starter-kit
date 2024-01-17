@@ -1181,5 +1181,21 @@
         }
       }
     ]
+  },
+  "6af184fe-ce77-4155-ad8d-eb6a83bf995a": {
+    "title": "To learn a technology is to tell good stories about it",
+    "url": "https://blog.liallen.me/to-learn-a-technology-is-to-tell-good-stories-about-it",
+    "description": "On the importance of knowing the history of a technology ",
+    "enclosure": {
+      "url": "https://blog.liallen.me/api/social-image?id=6af184fe-ce77-4155-ad8d-eb6a83bf995a",
+      "type": "image/jpeg"
+    },
+    "custom_elements": [
+      {
+        "content:encoded": {
+          "_cdata": "<p>Despite the prevailing emphasis on hard skills in the field, it would be an understatement to say that half of learning a technology is to be able to tell good stories about it.</p>\n<p></p>\n<p>I’ve met many colleagues who excel at the ‘how’ but seem indifferent to the ‘why’ aspect of technology. While asking how helps solve the problem, understanding is achieved through seeking why - a process of constructing compelling stories about it.</p>\n<p></p>\n<p>For example, it’s not easy to make sense"
+        }
+      }
+    ]
   }
 }

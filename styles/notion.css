@@ -7,6 +7,10 @@
  * places to add some flare.
  */
 
+.notion-list-item-property .notion-property-title {
+  display: none;
+}
+
 .giscus {
   width: 100%;
   max-width: var(--notion-max-width);

@@ -7,6 +7,10 @@
  * places to add some flare.
  */
 
+.notion-page-title .notion-page-icon-inline {
+  display: none;
+}
+
 .notion-list-item-property .notion-property-title {
   display: none;
 }

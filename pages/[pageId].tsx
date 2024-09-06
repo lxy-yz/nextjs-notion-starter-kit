@@ -3,7 +3,7 @@ import { isDev, domain } from 'lib/config'
 import { getSiteMap } from 'lib/get-site-map'
 import { resolveNotionPage } from 'lib/resolve-notion-page'
 import { NotionPage } from 'components'
-import { generateFeedItems } from 'lib/feed'
+// import { generateFeedItems } from 'lib/feed'
 
 export const getStaticProps = async (context) => {
   const rawPageId = context.params.pageId as string
@@ -30,7 +30,7 @@ export async function getStaticPaths() {
   }
 
   const siteMap = await getSiteMap()
-  await generateFeedItems(siteMap, true)
+  // await generateFeedItems(siteMap, true)
 
   const staticPaths = {
     paths: Object.keys(siteMap.canonicalPageMap).map((pageId) => ({

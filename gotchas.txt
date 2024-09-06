@@ -1,0 +1,6 @@
+1. filter view of database (posts) doesn't work https://github.com/transitive-bullshit/nextjs-notion-starter-kit/issues/342
+   cause: database with advanced filter not supported
+   workaround: use tags
+
+2. build timed out after n times https://nextjs.org/docs/messages/static-page-generation-timeout
+   workaround: commented out code for feed generation

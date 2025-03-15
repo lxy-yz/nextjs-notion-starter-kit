@@ -7,6 +7,23 @@
  * places to add some flare.
  */
 
+// 四季
+@media (max-width: 640px) {
+  .notion-callout .notion-row:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+}
+.notion-callout.notion-default_background_co {
+  border: none;
+  text-align: center;
+}
+.notion-callout .notion-page-icon-inline {
+  display: none;
+}
+.notion-callout .notion-callout-text {
+  margin-left: 0;
+}
+
 .notion-page-title .notion-page-icon-inline {
   display: none;
 }
